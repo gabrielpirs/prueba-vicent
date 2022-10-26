@@ -1,0 +1,421 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-main: 'Roboto', sans-serif;
+    --ff-sec: 'Alfa Slab One', cursive;
+
+    --fw-400: 400;
+    --fw-700: 700;
+    --fw-900: 900;
+
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+body {
+    font-family: var(--ff-main);
+}
+
+header p {
+    font-family: var(--ff-sec);
+    font-size: 4rem;
+    color: white;
+}
+
+h1 {
+    font-size: clamp( 4rem, 8vw, 12rem);
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--ff-sec);
+    display: inline-block;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: var(--ff-sec);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: var(--ff-main);
+}
+
+/* contenedores------------------------------------ */
+
+body {
+    position: relative;
+    max-width: 100vw;
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenedor-4-col {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "suscr suscr form form";
+    padding: 0 2rem;
+    position: relative;
+}
+
+.contenedor-flex {
+    width: 100%;
+    grid-column: 1/5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column {
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    margin-top: 20vh;
+    text-align: center;
+    padding-top: 10%;
+}
+
+/* nav----------------------------------------------- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 2rem;
+    letter-spacing: 1px;
+}
+
+.navbar ul li a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(80, 19, 19); 
+    transform: scale(1.5) translateY(-5px);
+}
+
+.menu {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar{
+        display:none;
+        background-color: black;
+    }
+
+    header p {
+        font-family: var(--ff-sec);
+        font-size: 3rem;
+        color: white;
+    }
+
+    .menu {
+        display: inline-block;
+        height: 40px;
+        filter: invert(1);
+    }
+
+    .contenedor-4-col {
+        display: grid;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:    "suscr"
+                                "form"
+                                ;
+        padding: 0 2rem;
+        position: relative;
+    }
+
+
+  }
+
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 105%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cont_anim {
+    /* background-color: #A82424; */
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.cont_palabras {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    position: absolute;
+    width: 700px;
+    animation: animacion 7s ease-in-out infinite;
+}
+
+.palabra1,
+.palabra2,
+.palabra3,
+.palabra4 {
+    height: 300px;
+}
+
+.palabras {
+    font-size: clamp( 4rem, 8vw, 12rem);
+    color: white;
+}
+
+@keyframes animacion {
+
+    0% {
+     top: 0;
+     width: 0;
+    }
+ 
+    15% {
+     top: 0;
+     width: 900px;
+    }
+ 
+    33% {
+     top: 0;
+     width: 0px;
+    }
+ 
+ 
+     /* ------------------ */
+ 
+    34% {
+     top: -300px;
+     width: 0px;
+    }
+ 
+    50% {
+     top: -300px;
+     width: 700px;
+    }
+ 
+ 
+    66% {
+     top: -300px;
+     width: 0px;
+    }
+ 
+     /* ------------------ */
+     
+     67% {
+         top: -600px;
+         width: 0px;
+        }
+     
+     85% {
+         top: -600px;
+         width: 700px;
+        }
+     
+     
+     100% {
+         top: -600px;
+         width: 0px;
+        }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social {
+    margin-bottom: 50px;
+}
+
+.social ul li {
+    list-style: none;
+    display: inline-block;
+
+}
+
+.social ul li a {
+    display: inline-block;
+    filter: invert(1);
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+.social ul li a:hover {
+    transform: translateY(-10px);
+}
+
+/* newsletter---------------------------- */
+
+.newsletter {
+    background-image: url(../img/background-pattern.jpg);
+}
+
+.contenedor-newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    grid-area: suscr;
+    height: 200px;
+}
+
+.contenedor-newsletter h2, p {
+    color: white;
+}
+
+.contenedor-form {
+    display: flex;
+    grid-area: form;
+    align-items: center;
+}
+
+
+.form-newsletter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+input {
+    width: 70%;
+    display: inline-block;
+    background-color: #D9D9D9;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #161616;
+    line-height: 16px;
+    height: 40px;
+    margin: 1rem 0;
+}
+
+.btn {
+    width: 145px;
+    height: 40px;
+    border: 4px solid #A82424;
+    color: #D9D9D9;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .contenedor-newsletter {
+        height: 100px;
+        margin: 1rem 0;
+    }
+
+    input {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .contenedor-form {
+        margin: 1rem 0;
+    }
+
+}
+
+
+/* deco ----------------------------- */
+
+.deco {
+    width: 100vw;
+    height: 70vh;
+    background-image: url(../img/background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* footer ------------------------------ */
+
+footer {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+footer::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(22, 22, 22);
+    opacity: 0.9;
+    z-index: 1;
+}
