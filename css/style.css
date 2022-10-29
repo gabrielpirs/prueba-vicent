@@ -12,7 +12,7 @@
     --fw-700: 700;
     --fw-900: 900;
 
-    
+
 }
 
 a {
@@ -48,6 +48,13 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    font-size: 1rem;
+    font-family: var(--ff-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 p {
     font-family: var(--ff-main);
 }
@@ -76,7 +83,10 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "suscr suscr form form";
+    grid-template-areas: "suscr suscr form form"
+                         "footer footer footer footer"
+                         "legales legales legales legales"
+    ;
     padding: 0 2rem;
     position: relative;
 }
@@ -123,7 +133,7 @@ main {
 }
 
 .navbar ul li a:hover {
-    color: rgb(80, 19, 19); 
+    color: rgb(80, 19, 19);
     transform: scale(1.5) translateY(-5px);
 }
 
@@ -156,6 +166,8 @@ main {
         grid-template-columns: 1fr;
         grid-template-areas:    "suscr"
                                 "form"
+                                "footer"
+                                "legales"
                                 ;
         padding: 0 2rem;
         position: relative;
@@ -182,7 +194,6 @@ main {
 }
 
 .cont_anim {
-    /* background-color: #A82424; */
     position: relative;
     width: 100%;
     height: 200px;
@@ -217,69 +228,54 @@ main {
      top: 0;
      width: 0;
     }
- 
+
     15% {
      top: 0;
      width: 900px;
     }
- 
+
     33% {
      top: 0;
      width: 0px;
     }
- 
- 
+
+
      /* ------------------ */
- 
+
     34% {
      top: -300px;
      width: 0px;
     }
- 
+
     50% {
      top: -300px;
      width: 700px;
     }
- 
- 
+
+
     66% {
      top: -300px;
      width: 0px;
     }
- 
+
      /* ------------------ */
-     
+
      67% {
          top: -600px;
          width: 0px;
         }
-     
+
      85% {
          top: -600px;
          width: 700px;
         }
-     
-     
+
+
      100% {
          top: -600px;
          width: 0px;
         }
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -364,6 +360,24 @@ input {
     text-transform: uppercase;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.btn a {
+    color: white;
+}
+
+.btn:hover {
+    width: 145px;
+    height: 40px;
+    border: 4px solid #A82424;
+    color: #D9D9D9;
+    background-color: #A82424;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media only screen and (max-width: 800px) {
@@ -388,7 +402,6 @@ input {
 /* deco ----------------------------- */
 
 .deco {
-    width: 100vw;
     height: 70vh;
     background-image: url(../img/background2.jpg);
     background-repeat: no-repeat;
@@ -397,6 +410,15 @@ input {
 }
 
 /* footer ------------------------------ */
+
+.contenedor-footer {
+    display: flex;
+    grid-area: footer;
+    width: 100%;
+    /* height: 40vh; */
+    padding: 2rem 0 2rem 0;
+    justify-content: space-between;
+}
 
 footer {
     position: relative;
@@ -419,10 +441,75 @@ footer::before {
     z-index: -1;
 }
 
-.contenedor-footer {
+.logo-footer {
+    width: 25%;
     display: flex;
-    height: 100%;
+    justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 40vh;
+}
+
+.contacto-footer {
+    color: white;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.contacto-footer ul {
+    margin-top: 1rem;
+    margin-bottom: 8px;
+}
+
+.contacto-footer ul li {
+    margin-top: 1rem;
+}
+
+.contacto-footer ul li i {
+    margin-right: 10px;
+}
+
+.contenedor_footer_form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 16px;
+}
+
+.contenedor_footer_form h3 {
+    color: white;
+}
+
+input {
+    width: calc(50% - 4px);
+}
+
+textarea {
+    width: 100%;
+}
+
+input, textarea {
+    display: inline-block;
+    background-color: #D9D9D9;
+    margin-bottom: 8px;
+    border: 2px solid black;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #161616;
+    line-height: 16px;
+}
+
+.legales-footer {
+    display: flex;
+    width: 100%;
+    grid-area: legales;
+    margin: 1rem 0 1rem 0;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-top: #D9D9D9 solid 1px;
+    border-bottom: #D9D9D9 solid 1px ;
+    padding: .5rem 0 .5rem 0;
+    text-transform: uppercase;
 }

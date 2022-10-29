@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -46,7 +48,6 @@
                             <div class="palabra1"><h2 class="palabras">cerveza</h2></div>
                             <div class="palabra2"><h2 class="palabras">birra</h2></div>
                             <div class="palabra3"><h2 class="palabras">beer</h2></div>
-                            <!-- <div class="palabra4"><h2 class="palabras">bier</h2></div> -->
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,7 @@
                 <div class="contenedor-form">
                     <form class="form-newsletter" action="#" method="post" enctype="">
                         <input type="text" name="email" placeholder="Email">
-                        <input class="btn" type="submit" value="enviar">
+                        <button class="btn" type="submit" value="enviar"><a href="#"> enviar</a></button>
                     </form>
                 </div>
         </div>
@@ -87,18 +88,27 @@
     <footer>
         <div class="contenedor-4-col">
             <div class="contenedor-footer">
-                <div class="logo-footer">
-                    <img src="img/logo.png" alt="logo vicent">
-                </div>
-
                 <div class="contacto-footer">
+                    <img src="img/logo.png" alt="logo vicent">
                     <ul>
-                        <li>direccióm</li>
-                        <li>tel</li>
-                        <li>mail</li>
+                        <li><i class="fa-solid fa-location-dot fa-lg"></i> Av. lorem</li>
+                        <li><i class="fa-brands fa-whatsapp fa-lg"></i>4811 4852</li>
+                        <li><i class="fa-solid fa-envelope fa-lg"></i>hola@vicent.com</li>
                     </ul>
                 </div>
-                
+                <div class="contenedor_footer_form">
+                    <h3>mensajeanos</h3>
+                    <form action="#" method="post" enctype="">
+                        <input type="text" name="nombre" placeholder="Nombre">
+                        <input type="text" name="email" placeholder="Email">
+					    <textarea name="message" placeholder="Mensaje" rows="3"></textarea>
+                        <button class="btn" type="submit" value="enviar"><a href="#"> enviar</a></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="legales-footer">
+                <h5>Beber con moderación. Prohibida su venta a menores de 18 años.</h5>
             </div>
         </div>
     </footer>
