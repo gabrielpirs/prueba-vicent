@@ -55,6 +55,13 @@ h3 {
     letter-spacing: 2px;
 }
 
+h5 {
+    font-size: .5rem;
+    font-family: var(--ff-main);
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
 p {
     font-family: var(--ff-main);
 }
@@ -346,10 +353,9 @@ input {
     color: #161616;
     line-height: 16px;
     height: 40px;
-    margin: 1rem 0;
 }
 
-.btn {
+.boton {
     width: 145px;
     height: 40px;
     border: 4px solid #A82424;
@@ -363,11 +369,11 @@ input {
     cursor: pointer;
 }
 
-.btn a {
+.boton a {
     color: white;
 }
 
-.btn:hover {
+.boton:hover {
     width: 145px;
     height: 40px;
     border: 4px solid #A82424;
@@ -383,8 +389,14 @@ input {
 @media only screen and (max-width: 800px) {
 
     .contenedor-newsletter {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-area: suscr;
         height: 100px;
-        margin: 1rem 0;
+        margin-top: 1rem;
     }
 
     input {
@@ -415,31 +427,15 @@ input {
     display: flex;
     grid-area: footer;
     width: 100%;
-    /* height: 40vh; */
     padding: 2rem 0 2rem 0;
     justify-content: space-between;
 }
 
 footer {
     position: relative;
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: -2;
+    background-image: url(../img/background-pattern.jpg);
 }
 
-footer::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(22, 22, 22);
-    opacity: 0.9;
-    z-index: -1;
-}
 
 .logo-footer {
     width: 25%;
@@ -450,31 +446,37 @@ footer::before {
 
 .contacto-footer {
     color: white;
-    width: 25%;
+    display: flex;
+    margin-top: 2rem;
+    grid-column: 1/2;
+}
+
+.contacto-datos {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    grid-column: 2/3;
+    color: white;
+    margin-top: 2rem;
 }
 
-.contacto-footer ul {
-    margin-top: 1rem;
-    margin-bottom: 8px;
+.contacto-datos ul {
+    padding-left: 0;
+    
 }
 
-.contacto-footer ul li {
-    margin-top: 1rem;
+.contacto-datos ul li {
+    margin-bottom: 1rem;
 }
 
-.contacto-footer ul li i {
+.contacto-datos ul li i {
     margin-right: 10px;
 }
 
 .contenedor_footer_form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-left: 16px;
+    margin-top: 2rem;
+    grid-column: 3/5;
 }
 
 .contenedor_footer_form h3 {
@@ -482,7 +484,7 @@ footer::before {
 }
 
 input {
-    width: calc(50% - 4px);
+    width: calc(50% - 2px);
 }
 
 textarea {
@@ -512,4 +514,23 @@ input, textarea {
     border-bottom: #D9D9D9 solid 1px ;
     padding: .5rem 0 .5rem 0;
     text-transform: uppercase;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .contacto-datos {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1/2;
+        color: white;
+        margin-top: 2rem;
+    }
+
+    .contenedor_footer_form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        grid-column: 1/2;
+    }
+
 }
